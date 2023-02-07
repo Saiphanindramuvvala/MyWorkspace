@@ -1,0 +1,70 @@
+<app-navbar>
+</app-navbar>
+<div class="container">
+  <div *ngIf="success" class="row">
+    <div class="alert alert-success">
+      Booking Success!
+    </div>
+    <div class="col-12">
+      <div class="card p-4">
+        <span>Booking ID: <b>{{booking.bookingId}}</b> </span>
+        <span>Game Name: <b>{{booking.gameName}}</b></span>
+        <span>Player ID:<b>{{booking.playerId}}</b></span>
+        <span>Ground Number:<b>{{booking.groundNumber}}</b> </span>
+        <span>Date Of Game:<b>{{booking.dateOfGame}}</b></span>
+        <span>Time Of Game:<b>{{booking.timeOfGame}}</b> </span>
+      </div>
+      <a href="/home">Go to Home</a>
+    </div>
+  </div>
+  <div *ngIf="!success" class="row">
+    <div *ngIf="progress" class="alert alert-warning w-100 text-center">Loading...</div>
+    <div class="col-4" *ngFor="let slot of availableSlots">
+      <div class="card p-4">
+        <h3 class="fw-bold text-center">{{slot.gameName}}</h3>
+        <span *ngIf="slot.available">Available</span>
+        <p>Total Ground : {{slot.totalGround}}</p>
+        <button (click)="checkSlot(slot.gameName)" class="btn btn-primary">Check Slot!</button>
+      </div>
+    </div>
+    <div *ngIf="checkSlotForm" class="card p-4 my-4">
+      <div *ngIf="error" class="alert alert-danger w-100 text-center">{{errorMsg}}</div>
+      <form
+        [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+        <div class="row g-3">
+          <div class="col-12">
+            <label for="playerId" class="form-label">Player ID</label>
+            <input formControlName="id" type="text" class="form-control" id="playerId">
+          </div>
+          <div class="col-sm-6">
+            <label for="firstName" class="form-label">First name</label>
+            <input formControlName="fname" type="text" class="form-control" id="firstName" placeholder="">
+          </div>
+          <div class="col-sm-6">
+            <label for="lastName" class="form-label">Last name</label>
+            <input formControlName="lname" type="text" class="form-control" id="lastName" placeholder="" v>
+          </div>
+          <div class="col-12">
+            <label for="dob" class="form-label">Date of Birth</label>
+            <input type="date" formControlName="dob" class="form-control" id="dob">
+          </div>
+          <div class="col-12">
+            <label for="gameName" class="form-label">Game Name</label>
+            <input id="gameName" formControlName="gameName" type="text" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label for="dateOfGame" class="form-label">Date of Game</label>
+            <input type="date" [min]="minDate" formControlName="dateOfGame" class="form-control" id="dateOfGame">
+          </div>
+          <div class="col-md-6">
+            <label for="tog" class="form-label">Time of Game</label>
+            <input type="time" formControlName="timeOfGame" min="06:00" max="22:00" step="600" class=" form-control"
+                   id="tog">
+          </div>
+        </div>
+        <button type="submit" [disabled]="bookingForm.invalid" class="btn btn-primary w-100 my-3">Book</button>
+      </form>
+    </div>
+  </div>
+
+</div>

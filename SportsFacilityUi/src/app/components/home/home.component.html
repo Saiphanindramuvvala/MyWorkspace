@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="card p-4">
+        <div class="card-title fw-bold text-uppercase text-center">Update Player</div>
+        <hr/>
+        <div class="card-body">
+          <p>
+            The Player details can be edited here!.
+          </p>
+          <p>Click the below button.</p>
+          <button (click)="navigate('update')" class="btn btn-primary w-100">Update</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card p-4">
+        <div class="card-title fw-bold text-uppercase text-center">Book Facility/Slots</div>
+        <hr/>
+        <div class="card-body">
+          <p>Slots can be book here! Check the available slots.</p>
+          <p>Click the below button.</p>
+          <button (click)="navigate('getSlots')" class="btn btn-primary w-100">Book</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>

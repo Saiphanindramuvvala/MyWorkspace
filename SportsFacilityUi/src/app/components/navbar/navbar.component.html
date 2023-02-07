@@ -1,0 +1,16 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light p-3">
+  <a class="navbar-brand fw-normal text-uppercase" href="#">Sports Facility</a>
+  <div class="align-nav"></div>
+  <div class="nlink" *ngIf="logStat.isLoggedIn()">
+    <a class="nlink" routerLink="/home" >Home</a>
+  </div>
+  <div class="nlink" *ngIf="logStat.isLoggedIn()">
+    <a class="nlink" routerLink="/getSlots" >Book Facility</a>
+  </div>
+  <div class="nlink" *ngIf="logStat.isLoggedIn()">
+    <a class="nlink" routerLink="/update">Edit Details</a>
+  </div>
+  <div *ngIf="logStat.isLoggedIn()">
+    <a class="btn btn-primary w-100" (click)="Logout()" >Logout</a>
+  </div>
+</nav>
