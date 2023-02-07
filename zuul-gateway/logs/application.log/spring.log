@@ -1,0 +1,138 @@
+2022-11-11 10:56:06.915  INFO 49620 --- [restartedMain] c.c.zuulgatewayy.ZuulGatewayApplication  : No active profile set, falling back to default profiles: default
+2022-11-11 10:56:09.234  WARN 49620 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2022-11-11 10:56:09.294  WARN 49620 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2022-11-11 10:56:09.761  INFO 49620 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=db004f50-35a3-34fc-bf22-586f6866b696
+2022-11-11 10:56:11.696  INFO 49620 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8084 (http)
+2022-11-11 10:56:11.728  INFO 49620 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-11 10:56:11.729  INFO 49620 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2022-11-11 10:56:12.088  INFO 49620 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-11 10:56:12.089  INFO 49620 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5119 ms
+2022-11-11 10:56:12.393  WARN 49620 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-11-11 10:56:12.394  INFO 49620 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-11-11 10:56:12.428  INFO 49620 --- [restartedMain] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@39639e75
+2022-11-11 10:56:13.335  WARN 49620 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-11-11 10:56:13.337  INFO 49620 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-11-11 10:56:14.013  INFO 49620 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-11-11 10:56:15.241  WARN 49620 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-11-11 10:56:15.266  INFO 49620 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses Jersey
+2022-11-11 10:56:15.410  WARN 49620 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-11-11 10:56:16.081  INFO 49620 --- [restartedMain] o.s.c.n.zuul.ZuulFilterInitializer       : Starting filter initializer
+2022-11-11 10:56:16.120  INFO 49620 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 5 endpoint(s) beneath base path '/actuator'
+2022-11-11 10:56:16.200  INFO 49620 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-11-11 10:56:16.484  INFO 49620 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-11-11 10:56:16.641  INFO 49620 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2022-11-11 10:56:16.642  INFO 49620 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2022-11-11 10:56:17.145  INFO 49620 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2022-11-11 10:56:17.146  INFO 49620 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2022-11-11 10:56:17.535  INFO 49620 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 10:56:17.601  INFO 49620 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-11-11 10:56:17.602  INFO 49620 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-11-11 10:56:17.602  INFO 49620 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-11-11 10:56:17.603  INFO 49620 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-11-11 10:56:17.604  INFO 49620 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-11-11 10:56:17.604  INFO 49620 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-11-11 10:56:17.605  INFO 49620 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-11-11 10:56:18.026  INFO 49620 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-11-11 10:56:18.033  INFO 49620 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-11-11 10:56:18.039  INFO 49620 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-11-11 10:56:18.053  INFO 49620 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1668144378050 with initial instances count: 4
+2022-11-11 10:56:18.064  INFO 49620 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ZUUL-API-GATEWAY with eureka with status UP
+2022-11-11 10:56:18.065  INFO 49620 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1668144378065, current=UP, previous=STARTING]
+2022-11-11 10:56:18.071  INFO 49620 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ZUUL-API-GATEWAY/LTIN308722.cts.com:zuul-api-gateway:8084: registering service...
+2022-11-11 10:56:18.141  INFO 49620 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ZUUL-API-GATEWAY/LTIN308722.cts.com:zuul-api-gateway:8084 - registration status: 204
+2022-11-11 10:56:18.155  INFO 49620 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8084 (http) with context path ''
+2022-11-11 10:56:18.157  INFO 49620 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8084
+2022-11-11 10:56:18.322  INFO 49620 --- [restartedMain] c.c.zuulgatewayy.ZuulGatewayApplication  : Started ZuulGatewayApplication in 14.101 seconds (JVM running for 16.006)
+2022-11-11 10:58:29.558  INFO 49620 --- [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-11 10:58:29.559  INFO 49620 --- [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-11 10:58:29.584  INFO 49620 --- [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 25 ms
+2022-11-11 11:13:42.552  INFO 42632 --- [restartedMain] c.c.zuulgatewayy.ZuulGatewayApplication  : No active profile set, falling back to default profiles: default
+2022-11-11 11:13:43.856  WARN 42632 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2022-11-11 11:13:43.906  WARN 42632 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2022-11-11 11:13:44.262  INFO 42632 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=db004f50-35a3-34fc-bf22-586f6866b696
+2022-11-11 11:13:45.413  INFO 42632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8084 (http)
+2022-11-11 11:13:45.437  INFO 42632 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-11 11:13:45.437  INFO 42632 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2022-11-11 11:13:45.672  INFO 42632 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-11 11:13:45.674  INFO 42632 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3088 ms
+2022-11-11 11:13:45.884  WARN 42632 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-11-11 11:13:45.885  INFO 42632 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-11-11 11:13:45.908  INFO 42632 --- [restartedMain] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@889ec78
+2022-11-11 11:13:46.480  WARN 42632 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-11-11 11:13:46.481  INFO 42632 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-11-11 11:13:46.917  INFO 42632 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-11-11 11:13:47.740  WARN 42632 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-11-11 11:13:47.756  INFO 42632 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses Jersey
+2022-11-11 11:13:47.865  WARN 42632 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-11-11 11:13:48.355  INFO 42632 --- [restartedMain] o.s.c.n.zuul.ZuulFilterInitializer       : Starting filter initializer
+2022-11-11 11:13:48.387  INFO 42632 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 5 endpoint(s) beneath base path '/actuator'
+2022-11-11 11:13:48.453  INFO 42632 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-11-11 11:13:48.633  INFO 42632 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-11-11 11:13:48.732  INFO 42632 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2022-11-11 11:13:48.733  INFO 42632 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2022-11-11 11:13:49.191  INFO 42632 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2022-11-11 11:13:49.192  INFO 42632 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2022-11-11 11:13:49.478  INFO 42632 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 11:13:49.515  INFO 42632 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-11-11 11:13:49.515  INFO 42632 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-11-11 11:13:49.515  INFO 42632 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-11-11 11:13:49.515  INFO 42632 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-11-11 11:13:49.516  INFO 42632 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-11-11 11:13:49.516  INFO 42632 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-11-11 11:13:49.516  INFO 42632 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-11-11 11:13:49.727  INFO 42632 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-11-11 11:13:49.730  INFO 42632 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-11-11 11:13:49.734  INFO 42632 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-11-11 11:13:49.739  INFO 42632 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1668145429738 with initial instances count: 2
+2022-11-11 11:13:49.745  INFO 42632 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ZUUL-API-GATEWAY with eureka with status UP
+2022-11-11 11:13:49.747  INFO 42632 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1668145429747, current=UP, previous=STARTING]
+2022-11-11 11:13:49.750  INFO 42632 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ZUUL-API-GATEWAY/LTIN308722.cts.com:zuul-api-gateway:8084: registering service...
+2022-11-11 11:13:49.789  INFO 42632 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ZUUL-API-GATEWAY/LTIN308722.cts.com:zuul-api-gateway:8084 - registration status: 204
+2022-11-11 11:13:49.798  INFO 42632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8084 (http) with context path ''
+2022-11-11 11:13:49.799  INFO 42632 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8084
+2022-11-11 11:13:49.884  INFO 42632 --- [restartedMain] c.c.zuulgatewayy.ZuulGatewayApplication  : Started ZuulGatewayApplication in 8.862 seconds (JVM running for 10.034)
+2022-11-11 11:14:28.405  INFO 42632 --- [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-11 11:14:28.406  INFO 42632 --- [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-11 11:14:28.418  INFO 42632 --- [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2022-11-11 11:18:49.525  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 11:23:49.527  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 11:28:49.529  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 11:33:49.541  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 11:38:49.557  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 11:43:48.279  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 11:48:48.281  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 11:53:48.295  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 11:58:48.300  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 12:03:48.310  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 12:08:48.321  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 12:13:48.327  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 12:18:48.342  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 12:23:48.356  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 12:28:48.361  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 12:33:48.372  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 12:38:48.381  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 12:43:48.388  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 12:48:48.401  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 12:53:48.410  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 12:58:48.417  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 13:03:48.424  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 13:08:48.435  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 13:13:48.448  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 13:18:48.452  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 13:23:48.470  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 13:28:48.482  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 13:33:48.491  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 13:38:48.500  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 15:23:07.585  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 15:28:07.598  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 15:33:07.604  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 15:38:07.621  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 15:43:07.637  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 15:48:07.649  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 15:53:07.651  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 15:58:07.666  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 16:03:07.683  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 16:08:07.693  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 16:13:07.706  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 16:18:07.717  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-11 16:23:07.734  INFO 42632 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
