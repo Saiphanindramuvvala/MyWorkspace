@@ -1,0 +1,6 @@
+sonar maven
+jacoco maven
+
+hystrix circuit breaker
+hystrix , hystrix dashboard
+ping, curl to poke ports

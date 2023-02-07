@@ -1,0 +1,540 @@
+mmt project
+java 8
+kafka
+my sql
+PL/sql
+springboot
+junit
+apigee
+Bitbucket
+
+searches:
+type inference in java 8
+subscribe and observable
+web logic server
+
+
+
+producer consumer
+architecture
+
+Java 8:
+------
+streams, lambda, functional interfaces
+
+Functional interfaces:
+Function
+Predicate
+Optional
+runnable
+Consumer
+Supplier
+Comparable
+ActionListener
+
+performs conditional check/ operation returns true or false - Predicate
+performs conditional check/ operation returns actual result - Function
+
+filter(predicate)-- can or cannot contains all the elements in list
+map(function)-- should contain all the elements in the provided list
+
+stream()
+filter()
+map()
+collect(collectors.toList())
+count()
+
+sorted(comparator)
+sorted((i1,i2)->(i1<i2)?1:(i1>i2)?-1:0)- for descending order  (compareTo() method from comparable interface helps)
+sorted((i1,i2)->i1.compareTo(i2))-- ascending order
+sorted((i1,i2)->-i1.compareTo(i2))-- descending order or reverse i1, i2 places
+min((i1,i2)->i1.compareTo(i2)).get()-- minimum value
+max((i1,i2)->i1.compareTo(i2)).get()-- maximum value
+forEach()
+toArray()
+
+
+
+queue- no duplication allowed
+offer()-- add()
+peek()-- element()
+poll()-- remove()
+removeAll()
+size()
+
+<Type>-- generics
+
+Deque<generic type> dq= new ArrayDeque<generic type>();
+peekFirst()
+peekLast()
+pollFirst()
+pollLast()
+..
+..
+..
+
+
+set-- hashset, linked hashset, sortedset, navigable set, tree set
+
+map-- hashmap, linked hashmap, weak hashmap, identity hashmap, hashtable, sorted map-> tree map
+
+
+
+
+
+
+optional, predicate
+create an employee class , get all the name values from the object
+min, max, avg, tot, duplicates
+
+
+package org.arpit.java2blog;
+ 
+import java.util.function.Predicate;
+ 
+public class Java8PredicateExample {
+ 
+    public static void main(String[] args) {
+        Predicate<Integer> predicate = i -> i > 100;
+        boolean greaterCheck = predicate.test(200);
+        System.out.println("is 200 greater than 100: "+greaterCheck);
+    }
+}
+
+
+Optional:
+isPresent()
+ifPresent()
+Optional.map()
+of()
+ofNullable()
+
+
+
+
+springboot
+----------
+
+application basically contains:
+web layer
+business layer
+data layer
+
+
+presentation layer- controller
+business layer- service
+persistance layer- entity/model
+database layer
+
+starters:
+spring-boot-starter-data-couchbase
+spring-boot-starter-web   :   embedded tomcat or jetty servers
+spring-boot-starter-test
+spring-boot-starter-validation
+spring-boot-starter-data-jpa
+spring-boot-starter-security
+spring-boot-starter-config : to write common configurations in a single microservice (cloud "config server")
+spring-boot-starter-actuator:
+beans
+health
+metrics
+mappings
+
+spring-boot-devtools   :   auto restart everytime we update code
+javax validation
+
+logging level:
+trace
+debug
+info
+warning
+error
+off
+
+@Autoconfiguration- configures all required beans for a Springboot application
+
+spring ide eclipse plugin
+
+@RestController:
+@ResponseBody : denotes returning object from controller should be serialized to JSON format and pass as Http response object
+
+@Configuration:
+@ComponentScan : used to define packages and sub packages required for a class
+
+
+List<Integer> numbers = Arrays.asList(5, 4, 10, 12, 87, 33, 75);
+IntSummaryStatistics stats = integers.stream().mapToInt((x) −> x).summaryStatistics();
+System.out.println("Sum of all numbers : " + stats.getSum());
+
+
+Supplier<String> supplier= ()-> "HelloLearners";
+System.out.println(supplier.get());
+
+
+Consumer<String> consumerString=s->System.out.println(s);
+consumerString.accept("HelloWorld");
+
+
+
+
+
+Bitbucket:
+---------
+Generating app password for bitbucket:
+Personal settings --> App passwords --> create new password.
+
+creating/cloning git perspective in eclipse:
+eclipse --> windows --> perspective --> git --> clone a git account on left side --> paste https url copied from home page clone option in bitbucket --> linked with git.
+
+Sharing project with bitbucket:
+Java perspective --> team --> share project --> git
+
+Initial commit:
+right click on project --> team --> commit
+
+merging bitbucket changes into eclipse:
+git perspective --> repository --> remote view --> synchronize --> merge.
+
+
+
+MySql:
+-----
+Database vs schema:
+Database: collection of data/ collection of tables/views
+Schema: logical representation of the database
+In Mysql Database and Schema are same.
+
+View: View is just like a select query of your table. 
+	View can have relative data from multiple tables.
+
+EXPLAIN: keyword used before query when you want to see how MySQL performs this query internally
+
+ALTER TABLE Customers ADD Email varchar(255);
+ALTER TABLE Customers DROP COLUMN Email;
+DISTINCT- returns unnique records avoiding duplicates
+UPDATE table_name SET column1='value1',column2='value2' WHERE condition;
+DELETE from table_name WHERE condition;
+SELECT * FROM Customers WHERE Country IN ('Germany', 'France', 'UK');
+SELECT * FROM Customers WHERE Country NOT IN ('Germany', 'France', 'UK');
+
+joins:
+select a.location_id, a.street_address, a.city, a.state_province, b.country_name from locations a join countries b using(country_id);
+select a.location_id, a.street_address, a.city, a.state_province, b.country_name from locations a join countries b where a.country_id=b.country_id;
+INNER JOIN
+LEFT JOIN
+RIGHT JOIN
+CROSS JOIN
+CROSS JOIN vs UNION
+WHERE- Conditional
+HAVING- Aggregate conditional
+
+
+select is from dql
+update vs alter
+delete vs truncate
+truncate- delete all the rows of a table at a time
+delete- particular row from a table
+drop- deleting table totally
+aggregate functions:
+count()
+sum()
+average()
+min()
+max()
+DISTINCT
+aliases vs like 
+aliases- as- want to change name to something else in console
+like- first letter, last letter, regex patterns 
+having vs group by
+
+inner join- primary key from 2 tables
+group by used for aggregate functions
+
+constraints:
+NOT NULL - Ensures that a column cannot have a NULL value
+UNIQUE - Ensures that all values in a column are different
+PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+FOREIGN KEY - Prevents actions that would destroy links between tables
+CHECK - Ensures that the values in a column satisfies a specific condition
+DEFAULT - Sets a default value for a column if no value is specified
+CREATE INDEX - Used to create and retrieve data from the database very quickly
+
+trigger:
+-------
+Delimiter:	by default mysql recognizes semicolon as statement delimiter,
+		so we must declare(redefine) a delimiter to cause mysql to pass entire stored program defination to the server.
+
+syntax:
+
+create trigger
+trigger_name trigger_time
+trigger_event
+on table_name for each row
+begin
+...statements...
+end;
+
+
+example1:
+
+create table employee1(
+id int  primary key,
+name varchar(30),
+email varchar(30),
+dob date);
+
+create table message(
+message varchar(50));
+
+delimiter //
+create trigger dob_trigger
+after insert on employee1
+for each row
+begin
+if new.dob is null then 
+insert into message values( concat('hi ', new.name, ' please check your date of birth again:)'));
+end if;
+end; //
+
+insert into employee1 values
+		(1, 'phani', 'sai@gmail.com', NULL),
+		(2, 'ankit', 'ankit@gmail.com', '1999-02-01'),
+		(3, 'ankit', 'ankit@gmail.com', '1999-02-01');
+        
+select * from message;
+
+
+
+example2:
+
+create table student(
+		id integer not null primary key,
+		name varchar(100) not null unique key,
+        age integer,
+        address varchar(25)
+        );
+delimiter //
+create trigger age_trigger 
+		before insert on student
+        for each row
+		if new.age< 0 then
+        set new.age= 0;
+        end if; //
+insert into student values(1, 'phani', -50, 'chennai');
+select * from student;
+insert into student values(2, 'anil', -5, 'chennai'),(3, 'ankit', 50, 'chennai'),(4, 'gokul', 250, 'chennai')
+
+
+
+performance improvements,
+full table scan,
+
+date fields:
+now()- date and time
+curdate()
+curtime()- 24hr format
+dayofweek()- returns integer between 1 to 7
+dayname()- returns day name
+year()
+datediff('yyyy-mm-dd','yyyy-mm-dd');
+timediff()
+
+primary key vs unique key:
+Cannot change values in primary key, can change in unique key
+no null values allowed, one null allowed
+a table can have only one column as primary key, more than one unique keys
+supports auto increment, cannot auto increment unique key
+
+
+index concepts,
+
+SubQuery:
+scalar subqueries:	returns single value or single row or single column.
+multiple row subqueries:	subquery returns more than one row
+multiple column subqueries:	subquery returns more than one column
+correlated subqueries:	outer and inner queries are related to each other
+				ex:  select id, name from emp e where 
+				     sal>(select avg(sal) from emp where sal=e.sal);
+				ex_2: select productCode, productName, buyPrice, productLine from products as p where
+					buyPrice>(select avg(buyPrice) from products where productLine=p.productLine);
+nested subquery:	
+delivered table subquery:	
+
+
+sql server vs oracle sql
+
+PL/SQL- Procedural Language extension of SQL:
+--------------------------------------------
+declaration block
+execution block
+exception block
+
+Syntax:
+
+DECLARE
+   Declaration statements;
+BEGIN
+   Execution statements;
+ EXCEPTION
+      Exception handling statements;
+END;
+/
+
+example:
+DECLARE
+a integer := 20;
+b integer := 20;
+sum1 integer;
+sub integer;
+mul integer;
+division real;
+BEGIN
+sum1 := a+b;
+dbms_output.put_line('addition of two numbers: ' || sum1);
+sub := a-b;
+dbms_output.put_line('subtraction of two numbers: ' || sub);
+mul := a*b;
+dbms_output.put_line('multiplication of two numbers: ' || mul);
+end;
+/
+
+area of circle:
+DECLARE
+pi constant integer := 3.1415;
+radius integer;
+diameter integer;
+circumference real;
+area real;
+BEGIN
+radius := 10;
+diameter := 2*radius;
+dbms_output.put_line('diameter of circle is: ' || diameter);
+circumference := 2*pi*radius;
+dbms_output.put_line('circumference of circle is: ' || circumference);
+area := pi*radius*radius;
+dbms_output.put_line('area of circle is: ' || area);
+end;
+/
+
+if condition:
+IF (condition) THEN 
+	STATEMENT;
+ELSEIF (CONDITION) THEN
+	STATEMENT;
+ELSE
+	STATEMENT;
+END IF;
+
+FOR LOOP:
+BEGIN
+    for var in 1..10
+    LOOP
+        dbms_output.put_line('loop ran ' || var || ' times!');
+    END LOOP;
+END;
+/
+
+
+
+Apache Kafka:
+------------
+
+continuous parallel data transfer
+order of transferred data by indexing
+Data can be stored until 7 days (Default retention period for Segments is 7 days)
+
+Kafka APIs:
+Producer- Publish(Write)
+Consumer- Subscribe(Read)
+Streams- continuous flow of data from one or more sources to one or more targets
+zookeeper
+
+producer <---> cluster(kafka brokers) <---> consumer
+a kafka "cluster" consists of one or more kafka "brokers"
+a kafka "broker" consists of one or more kafka "topics"
+each "topic" consists of one or more "partitions"
+every "message" that arrives to "partitions" will be assigned with sequence of ids called "offsets"
+-committing offsets
+Payload: a string of serialized message that stores in partitions of broker.
+key in message: a consumer who subscribed to particular messages can search accross distributed partitions in brokers and can identify them with their key value.
+Without a key, two messages on the same key could go to different partitions and be processed by different consumers in the group out of order.
+Key hashing: process of mapping a key to a partition which will be handled by "key partitionar"( code logic for assigning key to partitions and murmur2 algorithm serializes the message).
+kafka partitions and topics will be distributed along kafka brokers in a Horizantal scaling order and in a random sequence.
+
+replication- duplicating the data and storing in multiple partitions across different topics, one will be the leader and rest are followers.
+
+producers
+kafka server--> ( zookeepers and kafka clusters)
+kafka clusters --> kafka brokers--> kafka topics --> kafka partitions --> offsets(sequential id s) and payloads (serializad messages and keys)
+consumer groups
+
+
+
+
+commands:
+
+# Start the ZooKeeper service
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+# Start the Kafka broker service
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+STEP 3: CREATE A TOPIC TO STORE YOUR EVENTS
+.\bin\windows\kafka-topics.bat --create --topic topic_demo --bootstrap-server localhost:9092
+
+STEP 4: WRITE SOME EVENTS INTO THE TOPIC
+.\bin\windows\kafka-console-producer.bat --topic topic_demo --bootstrap-server localhost:9092
+
+STEP 5:  READ THE EVENTS
+.\bin\windows\kafka-console-consumer.bat --topic topic_demo --from-beginning --bootstrap-server localhost:9092
+
+
+Dockerfile for Kafka and zookeeper (docker-compose.yml):
+
+version: '3'
+
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+  kafka:
+    image: wurstmeister/kafka
+    container_name: kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+
+
+cmd to run docker-compose.yml :   docker-compose -f docker-compose.yml up -d
+					    docker run  --name=kafkademo -t --link wurstmeister/kafka --link wurstmeister/zookeeper -p 8088:8088 kafkademo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
