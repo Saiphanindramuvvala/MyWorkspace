@@ -151,15 +151,79 @@ warning
 error
 off
 
-@Autoconfiguration- configures all required beans for a Springboot application
+SPRINGBOOT ANNOTATIONS:
+----------------------- 
+@SpringbootApplication:
+	@Autoconfiguration: configures all required beans for a Springboot application
+	@Configuration: can define beans inside a class by this annotation
+	@ComponentScan : used to define packages and sub packages required for a class
+	
+Steriotype annotations:
+@component: service, repository and controller are derived from this class
+	@service:
+	@RestController:
+		@ResponseBody : denotes returning object from controller should be serialized to JSON format and pass as Http response object
+	@repository: 
+Spring Core Annotations:
+@Configuration
+@Bean
+@Autowired
+@Primary- when there are multiple classes of same type, declare this one class to take it as default of its type
+@Qualifier- when there are multiple classes of same type(i.e, having 2 service classes... declare this annotation and then class name to use that as default)
+@Lazy- creates bean when it is being used(autowired)
+@Value(${attributename})- to get values from application properties
+@PropertySource("classpath:customapplicationpropertiesfilename"): to get values from custom application properties file when @value is used
+@ConfigurationProperties
+@Profile("activeprofileapppropertiesname")
+@Scope 
 
-spring ide eclipse plugin
+Rest API related annotations: 
+@RequestMapping- post, put, delete, get mappings are derived from this annotation
+	@GetMapping
+	@PostMapping
+	@PutMapping
+	@DeleteMapping
+@RequestBody- get data from json body in post mapping
+@RequestParam- pass input from url--- giving input is optional through url
+@PathVariable- pass input from url--- more used in usecase (if we dont give value in url, it will throw 404.... forced to give parameters)
+@ControllerAdvice & @ExceptionHandler- handling exceptions 
 
-@RestController:
-@ResponseBody : denotes returning object from controller should be serialized to JSON format and pass as Http response object
-
-@Configuration:
-@ComponentScan : used to define packages and sub packages required for a class
+JPA related annotations:
+@Entity
+@Table
+@Column
+@Transactional
+@Id
+relationships:
+	@OnetoOne
+	@OnetoMany
+	@ManytoOne 
+	@ManytoMany
+Lombok annotations:
+@Data
+	@GettersandSetters 
+		@Getter
+		@Setter
+	@RequiredArgsConstructor
+		@AllArgsConstructor 
+		@NoArgsConstructor
+	@EqualsandHashcode
+	@ToString
+@Builder
+@Log
+@CommonsLog
+@Slf4j
+@Value
+@FieldDefaults(makeFinal= true, level= AccessLevel.PRIVATE)- to set comman field levels of all variables in entity class
+@SneakyThrows(Exception.class)- declare before class to do exception handling instead of using try and catch
+val- variable data type from lombok can automatically detects whether to use List or int or String
+@NotEmpty
+@NotNull 
+Some extra important annotations:
+@Transient- variable from entity class ignored by database if you annotate that variable with this
+@Temporal
+@Enumerated
+@Lob- for storing bulk data like bytecode of an image
 
 
 List<Integer> numbers = Arrays.asList(5, 4, 10, 12, 87, 33, 75);
