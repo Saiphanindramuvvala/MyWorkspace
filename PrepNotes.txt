@@ -166,6 +166,7 @@ Steriotype annotations:
 	@repository: 
 Spring Core Annotations:
 @Configuration
+@ConfigurationProperties(prefix=" "): externalized configuration and easy access to properties defined in properties files.
 @Bean
 @Autowired
 @Primary- when there are multiple classes of same type, declare this one class to take it as default of its type
