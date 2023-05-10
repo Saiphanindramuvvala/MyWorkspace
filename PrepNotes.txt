@@ -12,11 +12,13 @@ searches:
 type inference in java 8
 subscribe and observable
 web logic server
-
+Create List<List>> into a single list- flatMap
+convert List<> to Map<>
 
 
 producer consumer
 architecture
+== checks memory locations equals checks objects
 
 Java 8:
 ------
@@ -39,10 +41,13 @@ filter(predicate)-- can or cannot contains all the elements in list
 map(function)-- should contain all the elements in the provided list
 
 stream()
+collectors:
 filter()
 map()
 collect(collectors.toList())
 count()
+flatMap()
+groupingBy()
 
 sorted(comparator)
 sorted((i1,i2)->(i1<i2)?1:(i1>i2)?-1:0)- for descending order  (compareTo() method from comparable interface helps)
@@ -52,15 +57,26 @@ min((i1,i2)->i1.compareTo(i2)).get()-- minimum value
 max((i1,i2)->i1.compareTo(i2)).get()-- maximum value
 forEach()
 toArray()
+reduce()
+
+ArrayList vs LinkedList- AL is for faster retrival(iteration faster), LinkedList is for faster insertion/deletion(iteration slower).
+
+List
+addFirst()
+addLast()
+removeFirst()
+removeLast()
+peekFirst()
+peekLast()
 
 
-
-queue- no duplication allowed
-offer()-- add()
-peek()-- element()
-poll()-- remove()
+queue- no duplication allowed (priority queue allows)
+offer()(returns false if it wont takes)-- add()(throws error if it wont take)
+peek()(returns false)-- element()(throws exception)
+poll()(returns null)-- remove()(throws exception)
 removeAll()
 size()
+offer, peek, poll, isempty, size, clear are mostly used in queue.
 
 <Type>-- generics
 
@@ -103,8 +119,11 @@ public class Java8PredicateExample {
 
 
 Optional:
-isPresent()
-ifPresent()
+Optional<String> opt= Optional.of("String");
+Optional<String> opt1= Optional.ofNullable(variable); // variable can or cannot be nullable
+opt.isPresent()- returns boolean
+opt.get()- returns value
+ifPresent(function/value).orElse(function/value)
 Optional.map()
 of()
 ofNullable()
@@ -139,6 +158,7 @@ beans
 health
 metrics
 mappings
+spring-boot-starter-cache: cache support
 
 spring-boot-devtools   :   auto restart everytime we update code
 javax validation
@@ -153,15 +173,16 @@ off
 
 SPRINGBOOT ANNOTATIONS:
 ----------------------- 
-@SpringbootApplication:
+@SpringbootApplication: It is a spring boot annotation which indicates a configuration class that allows to declare one or more @Bean methods and also enables auto-configuration and component scanning.
 	@Autoconfiguration: configures all required beans for a Springboot application
 	@Configuration: can define beans inside a class by this annotation
-	@ComponentScan : used to define packages and sub packages required for a class
+	@ComponentScan : used to specify packages and sub packages that we want to scan for beans
 	
 Steriotype annotations:
 @component: service, repository and controller are derived from this class
 	@service:
 	@RestController:
+		@Controller: 
 		@ResponseBody : denotes returning object from controller should be serialized to JSON format and pass as Http response object
 	@repository: 
 Spring Core Annotations:
@@ -174,7 +195,7 @@ Spring Core Annotations:
 @Lazy- creates bean when it is being used(autowired)
 @Value(${attributename})- to get values from application properties
 @PropertySource("classpath:customapplicationpropertiesfilename"): to get values from custom application properties file when @value is used
-@ConfigurationProperties
+@ConfigurationProperties- prefix for configuration
 @Profile("activeprofileapppropertiesname")
 @Scope 
 
@@ -264,6 +285,12 @@ git perspective --> repository --> remote view --> synchronize --> merge.
 
 MySql:
 -----
+
+DDL(Defination language)-Delete,Rename,Create,Alter,Truncate
+DML(Modification language)-Insert,Update,Delete,Merge
+DRL(Retrival language)-Select
+DCL(Control language)-Grant,Revoke
+TCL(Transactional Control Language)-Commit,Rollback,Savepoint
 Database vs schema:
 Database: collection of data/ collection of tables/views
 Schema: logical representation of the database
@@ -271,16 +298,41 @@ In Mysql Database and Schema are same.
 
 View: View is just like a select query of your table. 
 	View can have relative data from multiple tables.
+	create view Vname select empid, empname from employee;
 
 EXPLAIN: keyword used before query when you want to see how MySQL performs this query internally
 
-ALTER TABLE Customers ADD Email varchar(255);
+ALTER TABLE Customers ADD Email varchar(255); (alter- table modification)
 ALTER TABLE Customers DROP COLUMN Email;
 DISTINCT- returns unnique records avoiding duplicates
 UPDATE table_name SET column1='value1',column2='value2' WHERE condition;
 DELETE from table_name WHERE condition;
 SELECT * FROM Customers WHERE Country IN ('Germany', 'France', 'UK');
 SELECT * FROM Customers WHERE Country NOT IN ('Germany', 'France', 'UK');
+RENAME-TO
+
+
+String methods:
+UPPER()
+LOWER()
+INITCAP()- initial letter capital for every word
+SUBSTR("sourceString",Position(int),Lenght(int));
+INSTR()
+LENGHT()
+CONCAT()
+TRIM()- LTRIM(), RTRIM()
+REPLACE()
+LPAD/RPAD
+
+Numeric functions:
+ROUND()
+TRUNC()
+CEIL()
+FLOOR()
+MOD()-%
+SQRT()
+POW()
+
 
 joins:
 select a.location_id, a.street_address, a.city, a.state_province, b.country_name from locations a join countries b using(country_id);
@@ -288,10 +340,12 @@ select a.location_id, a.street_address, a.city, a.state_province, b.country_name
 INNER JOIN
 LEFT JOIN
 RIGHT JOIN
-CROSS JOIN
+FULL JOIN
+FULL JOIN vs UNION
+CROSS JOIN- also known as cartician join
 CROSS JOIN vs UNION
 WHERE- Conditional
-HAVING- Aggregate conditional
+HAVING- Aggregate conditional - groupby
 
 
 select is from dql
@@ -300,12 +354,13 @@ delete vs truncate
 truncate- delete all the rows of a table at a time
 delete- particular row from a table
 drop- deleting table totally
-aggregate functions:
+aggregate functions/group functions:
 count()
 sum()
 average()
 min()
 max()
+
 DISTINCT
 aliases vs like 
 aliases- as- want to change name to something else in console
@@ -580,13 +635,39 @@ cmd to run docker-compose.yml :   docker-compose -f docker-compose.yml up -d
 
 
 
+DataStructures:
+---------------
 
+Searching:
+Linear search: checks each and every element in collection until it finds target item.
+Binary search: sorts data , divides it into two halves and checks if target element is in left half or right half.
+Interpolation search: estimates target item based on first and last item of collection after sorting it... same as binary search.
+Exponential search: doubles size of search interval until it gets target item from collection. effecient for large data.
+Terenary search: sort collection, divide into 3 parts and search... eliminates one part in each iteration.. less effecient than binary.
+Hash based search: uses hash functions to map target item to a particular index in a datastructure such as hashtable.
+binary is most suitable searching technique
 
+Sorting:   
+Bubblesort:checks adjacent elements and swap if in wrong order.
+Selection sort:takes shortest and adds it in first place.., repeats until all are sorted
+Insertion sort:iterates over collection and keeps each element in its place in a sorted position.
+Quick sort: selects a pivot element, partitions it into two sub collections based on pivot, recursively sorts sub collections.
+Merge sort:divides into two halves and sorting each sub collection recursively and merge 2 halves back.
+Heap sort:builds max heap extracts elements and sorts....
+merge and heap sortings are effecient
 
+Http response status codes:
+--------------------------
+200-ok
+202-accepted
+400-bad request
+403- forbidden
+404- not found
+500- internal server error
+502- bad gateway
 
-
-
-
+kibana: 
+container.image.name" " and message* *
 
 
 

@@ -1,0 +1,714 @@
+class & objects:
+class- collection of objects with common properties is known as class.
+objects- objects is an instance of class, also defined as entity that has state and behaviour.
+
+
+variables:it is a container which holds value and is assigned to a datatype
+three types: local- variable declared only inside body of method.
+instance- declared inside class but outside body of method.
+static- variable is declared as static.
+
+static: static is stateless.
+
+       > when used static it always stores data in method area.
+       > non-access modifier used for methods and attributes.
+       > static methods/attributes can be accessed without creating an object of a class.
+	 > same across all objects created. so it saves memory.
+	 > A static method can access static data member and can change the value of it.
+	 > Static method cannot call nonstatic method or member of a class directly.
+	 > This and super keywords cannot be used inside static method.
+	 > Main method have static keyword because JVM need not to create an object of that class inorder to call main method.
+
+primitive types:
+integer- byte,short,int,long
+floating-point- float,double
+character- char
+boolean
+
+
+object references: created objects has space reserved in heap memory, 
+                   object reference is used to point an object/value. 
+			 Ex: Demo d1= new Demo();  here d1 is an object reference(Stores null by default if don't initialize).
+
+
+statements:
+ expression statements- produce value ex: 2+4,4%2
+                        assign value ex: x=1;
+                        neither produce nor assign ex: count++, a=x+y;
+
+ declarative statements- int id, boolean flag, char gender
+
+ control flow statements- conditional:if,ifelse,ifelseif,switch
+                          loop:for,while,dowhile
+                          flowcontrol: return,continue,break
+
+arrays: object which contains elements of similar datatype.
+two types- single dimensional
+           multi dimensional-data stored in rows and columns
+
+
+methods: used to perform particular task
+        >parameters and method names must different
+- instance methods (normal non static methods of a class)
+- static methods
+
+method overloading: multiple methods with same method names but different parameters and input data in same class 
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+method overriding: if subclass has same method as declared in parent class and same parameters in different classes
+                  >methods can't be less accessible(public and private)
+
+
+
+constructors- it is a method to initialize objects.
+            > block of code represented using same class name, 
+              "which is used to create instance of class".
+
+no-arg constructor- doesnot contain any parameters
+public Test(){
+Sysout("no-args");
+}
+
+parametrized constructor- constructor with parameters
+public Test(String name){
+this.name=name;
+}      
+
+constructor overloading: same class name but different parameters
+                        > this() invocation is used in constructor overloading to avoid 
+                           duplicate code issues.
+                        > this() is used to call a constructor from same or other class
+                         
+                        > this. reference is used to initialize objects and access the instance variable 
+                           from the local variable declared in constructor.
+                        > this. is used to refer current object,mainly eliminates confusion b/w parameters
+
+
+operators- which performs operations on variables and values
+arithmetic: +, -, *, /, %
+comparison: >, <, >=, <= !=
+logical: &&, ||, !
+bitwise: &, |, ^, ~
+assignment:=
+ternary: ?
+syntax- variable=(condition)? (expression1) : (expression2)
+n1=10;
+n2=20;
+max=(n1>n2)? n1:n2; 
+sysout(max); \\returns n1 because n1 is lesser than n2. 
+
+
+control flow:
+for loop: iterate program several times if no.of iterations is fixed
+for(init;cndn;inc or dec){
+statement;
+}
+
+while loop: iterates if no.of iterations are not fixed
+while(condition){
+statement;
+}
+
+do while loop:executes once and iterates until condition is true.
+do{
+statement;
+}
+while(condition){
+}
+
+
+switch-(integer,string,enum)
+switch(condition){
+case1: (print statement);
+break;
+....until condition satisfied
+default: (print statement);
+}
+
+
+break: statement to exit the loop when the condition is satisfied
+labelled break: labelled in outer for loop & declared in inner loop to break out of a nested for loop.
+
+continue: statement used in loop to skip an iteration
+
+
+recursion: a method calling itself continuously. (declaremethod as static and call somewhere inside... the same method).
+
+
+packages:packages are group or collection of classes
+built-in- 
+          io:input/output operations(inputstream,outputstream,printstream)
+          lang: contains classes and interfaces(string,math,integer)
+          util: collections framework(date,time,hashmap)
+          sql: accessing data in database(drivermanager,connection)
+          net: impleents networking applications(http,url)
+          
+
+Strings: An object which represents sequence of char values, strings are immutable(can't change values)
+string operations:
+s.length()- displays length of string
+s.isEmpty()- displays if a string is empty or not
+s.equals()- compares string values in view of Upper or lower case
+s.equalsIgnoreCase()- compares just the values ignoring case
+s.compareTo()- displays unicode vlue of string
+s.indexOf()- displays partical character's index
+s.subString()- displays string based on range of index given
+s.replaceAll("o", "r")- replaces the actual character with mentioned character
+s.trim()-eliminates the white space b/w 2 strings when being concatinated.
+s.split(" ")-splits a group of words seperated by white spaces and stores in array.
+
+s.toCharArray()- converts given string into sequence of characters.
+example: public class array{
+    public static void main(String[]args){
+        String x="hi my name is prem";
+        char y[]=x.toCharArray();
+        for(char n:y){
+            System.out.println(n);
+        }
+    }
+}
+s.split()- breaks the string against the regular expression
+example: public class MyClass {
+    public static void main(String args[]) {
+      String x="today@is@sunday";
+      String[] y=x.split("@",0);
+      for(String n:y){
+          System.out.println(n);
+      }
+    }
+}
+
+
+string pool: contains in heap memory
+           > In heap memory if object is referencing to same value without new() keyword then 
+             all these object references fall under one string pool.
+             But if new() keyword is used and the value is same then 
+             that object reference will reference the string pool.
+
+             String s=new string();- creates a string pool
+             String s=new string("hello");-hello is value in string pool
+
+string intern: process of building string pool
+               brings different new object literals under one string pool.
+
+string concatenation: joining 2 strings using + operator
+
+string builder-used to modify string
+StringBuilder s=new StringBuilder();
+examples: delete,append,insert,reverse,replace,length
+
+string buffer- same as stringbuilder but synchronized.
+
+
+escape sequences:
+\n- newline
+\t- tab space
+\"- double quote
+\b- backpace
+
+
+math class:
+random value- double x=Math.random();
+roundup value- double x=Math.ceil(24.5); \\returns 25
+rounddown value- double x=Math.floor(24.5); \\returns 24
+max value- double x=Math.max(2.5,2.7); \\returns 2.7
+abs value- double x=Math.abs(-2.5); \\returns 2.5
+power value- double x=Math.pow(2.0, 4.0); \\ 2 power 4 retruns 2*2*2*2=16
+squareroot value- double x=Math.sqrt(64.0); \\retruns 8
+
+
+final variable: if variable's value shouldn't be changed then we use final keyword.
+
+
+inheritance: mechanism in which subclass inherits all properties and behaviours of super class.
+            >should follow IS-A rule(editor extends employee) or HAS-A rule
+		> Is a -> inheritance (maruthi is a car)- inherits car class
+		> has a -> composition (maruthi has a engine)- creates object of engine class and uses it
+
+syntax- class subclass extends superclass{}
+
+single- 
+multi-level- 
+hierarchial- 
+multiple- 
+hybrid- 
+
+
+polymorphism: occurs when many classes are related to each other by 
+              inheritance,performing single action in different ways.
+compile time- occured during method overloading
+runtime- occured during method overriding
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+difference between abstraction and interface is that:
+                  > abstract class can contain method with body, but accessed in main public class.
+		      > interface only accepts empty methods.
+			> Interface can have only static and final variables
+
+Abstraction
+Abstract class: a restricted class that cannot be used to create objects
+              > to access abstract class, it must be inherited from another public class
+              > use of abstract class is only determined only when extended(inheritance)
+
+abstract method: can only be used in abstract class, and doesn't have body.
+
+abstract class SuperClass{
+	abstract void1(){
+	Sysout("hello");
+}
+}
+
+
+
+Interface: it is a blueprint(replacement) of class, where class will be replaced with interface
+
+ 			   > to extend an interface in public class we use "implements" 
+                                              like we use "extends" in inheritance
+                         public class SUPERCLASS implements MYINTERFACE{}
+
+			    > static and final variables
+                      > mostly contains abstract methods
+                      > it contains empty bodies in methods
+                      > we use interface for multiple inheritance
+
+syntax- public interface User{
+           public void print(); \\ empty method
+        }
+
+
+marker interfaces: an empty interface with no methods and fields.
+                 > it provides run-time information about objects
+
+cloneable interface: it is a marker interface used to clone an object in java class
+
+
+
+
+Eclipse debugger: inserts break point to pause the code at certain lines
+
+
+
+
+JVM Internals: to know how JVM runs behind
+Class loader: a class is used to load class files in java to JVM
+
+Bootstrap ClassLoader: Loads class from JRE/lib/rt.jar (loads first java class loader)
+Extension ClassLoader: Loads class from JRE/lib/ext (core java classes are loaded from jdk)
+System or Application ClassLoader: Loads class from CLASSPATH environment variable
+
+functioning order of classloader: application classloader -> Extension classloader -> Bootstrap classloader
+
+
+
+Reflection: modifying the runtime behaviour of a class at run time.
+
+
+
+Method Area & Heap:
+			> new objects are created in heap memory.
+			> method area allocates the memory for the object's data. //static variables
+
+
+
+Garbage Collection: automated process of deleting code that's no longer needed, to free up memory space.
+
+GC algorithms: > Mark and Sweep \\ after perofrming GC the empty spaces are left as it is, 
+                                   hence memory cant be allocated to new objects and generates OutOfMemory error.
+               > Mark-Sweep-Compact \\ the compact fills all the empty spaces and allocates larger space for new objects
+               > Mark and Copy
+
+
+
+Stack: A stack is a data structure which follows LIFO(Last In First Out)
+       public Stack(): default constructor which creates empty stack.
+
+                        Stack stk = new Stack();
+
+basic stack operations: Push() \\inserts element onto the top of stack \\stk.push(24);
+                        pop() \\removes an element from top of the stack \\stk.pop();
+                        peek() \\looks at the top element of stack without removing it \\ <datatype> x= stk.peek();
+			    empty() \\checks if stack is empty or not \\ boolean x= stk.empty();
+                        search() \\seraches specified object and returns it's position \\ <datatype> x=stk.search("data");
+                        size() \\returns the total no.of elements in stack \\<datatype> x=stk.size();
+
+
+
+Exceptions:
+            an error that occurs and interrupts the flow of program, during execution.
+multiple exceptions: where we can handle mutltiple catch() statements in a method and throw the errors
+polymorphic referencing: used at end of catch expression to catch and throw exceptions \\ catch(Exception e){}, catch(Throwable e){}
+
+** when a exception is generated(true) no code will be executed except
+   matching catch()expression handler block and finally block.
+
+**in case of different methods,unchecked exception should first be declared in method body as\\throw new IOException();
+  no need to declare if exceptions are handled only inside main() method without any other methods in a class
+
+try- tests the errors during execution
+catch- it handles the errors occured in try block
+finally- regardless of the result it executes the code after try&catch
+throw- used to throw an exception in catch()
+throws- declare exceptions in methods such as \\ public static void() throws AritmeticException {}
+
+2 types: 
+Checked Exceptions- directly inherits throwable class and are checked at compile-time. \\occurs if thrown(throw) and caught
+                    ex: IOException,SQLException
+Unchecked Exceptions- inherits runtime exception and are checked at run-time. \\occurs without using throw
+                    ex: ArithmeticException, ArrayIndexOutOfBoundsException
+
+Assertion: statement used to test your assumptions about the program.
+example: main(){
+	 	int x=21;
+		assert x<=18 : "can't vote";
+		sysout("age is"+x);	 \\returns age is 21 #if age 17# \\returns age is can't vote
+	  }
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Input and Output
+
+Stream IO:sequence of data which is composed of bytes. (it performs read/write).
+
+automatically created streams are:
+1) System.out: standard output stream \\System.out.println("simple message");  
+2) System.err: standard error stream   \\System.out.println("simple message");
+3) System.in: standard input stream     \\
+ 
+
+2 types of stream IO: byte stream
+                      character stream
+stream IO operations-
+                  1. open stream
+		     2. read/write \\FileInputStream to read data in files \\FileOutputStream write into files.
+   		     3.close stream
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+COLLECTIONS FRAMEWORK(data structures): 
+               is a framework where we can store and manipulate data(group of objects).
+
+Iterator interface: iteration of elements in forward direction.
+** Iterator <datatype> =x.iterator();
+methods- public boolean hasNext(); \\returns true if iterator has elements
+         public Object Next(); \\ returns elements and points to next element
+         public void remove(); \\removes last elements returned by iterator.
+
+
+Collections: it is implemented by all the classes in the collection. //List,Set,Queue -> Collections -> Iterable
+             List ->(ArrayList, LinkedList)
+             Set ->SortedSet ->(HashSet, LinkedHashSet, TreeSet)
+             Queue ->Deque ->(ArrayDeque), Priority queue
+		 Map-> HashMap, LinkedHashMap, TreeMap
+
+**Collections.sort(cars); \\used to sort elements \\collections is a class name that has to be imported
+**Arrays.toString(cars); \\converts array elements in cars array to List
+
+List: it is ordered set of elements, which is a sub interface of Collection interface.
+syntax- ArrayList <datatype> list1= new ArrayList <datatype>();
+        LinkedList <datatype> list2= new LinkedList <datatype>();
+
+various list operations are:
+	          >x.add("hello") \\adds hello to the list x
+	          >x.remove() \\deletes element from list
+	            >x.size() \\returns total no.of elements in collection
+              >void clear() \\removes all elements from collection
+        >boolean contains() \\search for element and returns true if element is present
+>public Iterator iterator() \\returns an iterator
+>public Object[] toArray() \\converts collection into array
+	   >boolean equals() \\compares values of two collections
+	         >hashCode() \\returns hashcode no.of collection
+	          >indexOf() \\returns index number of specified element in list
+
+ArrayList- it is a resizable array, size&elements in arraylist can be modified.
+              	 > memory management happens in dynamic array
+               	 > use ArrayList for storing and accessing data
+example:
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<String> cars = new ArrayList<String>();
+    cars.add("Volvo");
+    System.out.println(cars);
+  }
+}
+
+LinkedList- similar to arraylist
+                  > memory management is done by doubly linked list
+			> use LinkedList for manipulating data.
+
+ linkedlist operations:
+addFirst()-	Adds an item to the beginning of the list.
+addLast()- Add an item to the end of the list
+removeFirst()- Remove an item from the beginning of the list.
+removeLast()- Remove an item from the end of the list
+getFirst()- Get the item at the beginning of the list
+getLast()- Get the item at the end of the list
+
+
+
+Queue: a collection in which FIFO is used for insertion and deletion of elements.
+
+few queue operations-
+*boolean add()-  inserts the specified element into queue and returns true
+*Object peek()-  retrieves, but does not remove, the head of this queue, or returns null if this queue is empty.
+*Object poll()-   retrieves and removes the head of this queue, or returns null if this queue is empty.
+boolean offer()-  insert the specified element into this queue.
+Object remove()-  retrieves and removes the head of this queue.
+Object element()-  retrieves, but does not remove, the head of this queue.
+
+ArrayDeque- add or remove elements from both sides of the queue.
+syntax- ArrayDeque<String> x= new ArrayDeque<String> ();
+linkedlist operations also apply to arraydeque
+
+
+
+Set: a collection that cannot contain duplicate elements.
+
+operations in set are:
+1) union: returns all the elements in two sets without repetition of same elements \\addAll();
+          HashSet<Integer> union= new HashSet<Integer>(x);
+		union.addAll(y);
+		System.out.println(union);
+
+2) interface: returns only the common elements from given two sets \\retainAll();
+              HashSet<Integer> intersection= new HashSet<Integer>(x);
+		intersection.retainAll(y);
+		System.out.println(intersection);
+
+3) difference: compares two sets and returns values which are not present in one set \\removeAll();
+  		  HashSet<Integer> difference= new HashSet<Integer>(x);
+		intersection.removeAll(y);
+		System.out.println(difference);	
+
+
+HashSet- order is not preserved \\elements are not printed in the order they are declared
+
+LinkedHashSet- order is preserved \\elements are printed in the order of declaration
+             > faster than hashset in terms of iteration
+
+TreeSet- prints elements in ascending order, though the declared order is improper.
+       > to convert elements to descending order using iterator \\Iterator<Integer> itr= x.descendingIterator();
+       > can't use descending iterator option in hashset
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+Map: Map ->SortedMap ->(HashMap, LinkedHashMap, TreeMap)
+
+	> A map contains values on the basis of key and value pair. 
+	> Each key and value pair is known as an entry. 
+	> A Map contains unique keys.
+
+HashMap- maintains no order   // extends AbstractMap
+                              implements map,cloneable,serializable
+
+HashMap<Integer, String> x= new HashMap<Integer, String> ();
+x.put(1, "hello");
+x.get(1);   \\ returns value of particular index
+x.remove(1); \\remove value of particular index
+x.clear();    \\removes all items
+x.size();      \\ returns the no.of elements
+
+** to loop through items of HashMap with for-each loop, use \\keySet() to return keys \\values() to return values
+
+
+LinkedHashMap- it maintains insertion order \\extends HashMap
+                                             implements Map
+
+TreeMap- maintains ascending order(sorted) \\ extends AbstractMap
+                                              implements NavigableMap,Cloneable,Serializable
+
+
+
+Generics: means parametrized types
+        > errors are appeared at compiletime than at runtime.
+
+generic type parameter naming conventions-
+T - Type; E - Element; K - Key; N - Number; V - Value
+
+Generic Class- a class that can refer to any type.
+example-
+package generics;
+
+public class Simple<T> {
+	T x;
+	public void set(T x) {
+		this.x=x;
+	}
+	public T get() {
+		return x;
+	}
+	public static void main(String[] args) {
+		Simple<String> n=new Simple<String>();
+		n.set("A");
+		System.out.println(n.get());
+	}
+}
+
+
+Generic Method- have their own type parameters
+example-
+package generics;
+
+public class Genericmethods {
+	public static <E> void print(E[] elements) {
+		for(E x:elements) {
+			System.out.println(x);
+		}
+	}
+	public static void main(String[] args) {
+		Integer [] intarray= {1,2,3,4,5};
+		print(intarray);
+	}
+}
+
+
+Wildcard- represented by "?" symbol  \\ any sub class can exend the superclass
+
+if there are multiple subclasses extending a super class, to call any subclass in super class method then wildcard is used 
+to represent that subclass without mentioning the name of the subclass.
+
+Unbounded Wildcards- represent a list of unknown type \\List<?> x
+
+UpperBound Wildcards- restricts the access to specific type or subtype of that type \\List<? extends Number> x
+
+LowerBound Wildcards- restricts the access to specifictype ot supertype of that type \\List<? super Number> x
+
+
+
+
+Nested Class: a class declared within another class or interface. 
+two types-
+       > static nested class
+       > non-static nested class
+
+static nested class- a static class created within the class.
+             syntax- Outer.Inner x=new Outer.Inner(); \\invokes the inner class using outer class
+                     x.display(); \\gets the method present in static class
+
+example program-
+package nestedclass;
+
+public class Outer {
+	static class Inner{
+		public void display() {
+			System.out.println("im inside the method of static class");
+		}
+	}
+	public static void main(String[]args) {
+		Outer.Inner y=new Outer.Inner();
+		y.display();
+	}
+}
+
+
+
+non-static nested class-> {member inner class, anonymous inner class, local inner class}
+syntax-
+Outerclass out=new Outerclass(); \\creating object for outer class.
+Outerclass.Innerclass x=out.new Innerclass(); \\innerclass accessing outer class.
+x.print(); \\invoking the method created in innerclass.
+
+member inner class- a class created within class and outside method. \\public,default,private,protected
+example program-
+package nestedclass;
+
+public class Member {
+	String x="im from inner class";
+	public class Inner{
+		public void print() {
+			System.out.println(x);
+		}
+	}
+	public static void main(String[]args) {
+		Member.Inner x=new Member().new Inner();
+		x.print();
+	}
+}
+
+
+anonymous inner class- an inner class without any name and for which only a single object is created.
+example program-
+package nestedclass;
+
+abstract class Inner{           \\can also replace "abstract class" with "interface"
+	abstract void print();     \\remove "abstract" 
+}                                 \\ now the anonymous class is created using interface
+
+public class Anonymous {
+	public static void main(String[]args) {
+		Inner x=new Inner() {
+			void print() {
+				System.out.println("im anonymous class, without class name");
+			}
+		};
+		x.print();
+	}
+}
+
+
+
+local inner class- a class created within method.
+example program-
+package nestedclass;
+
+public class Local{  
+	public void display() {
+		class Inner{
+			void print() {
+				System.out.println("im inside of method in subclass");
+			}
+		}
+		Inner x=new Inner();
+		x.print();
+	}
+	public static void main(String[]args) {
+		Local n=new Local();
+		n.display();
+	}
+}
+
+
+
+Lambdas & Streams: 
+
+Lambda: a code which takes in parameters and returns values.
+        \\functional interface is used in Lambdas  
+         \\all the variables declared in lambda parameter must be initialized in functional interface
+          \\functional interface only consists of one abstract method.
+
+syntax- (parameter) -> expression
+        (parameter1, parameter2) -> expression
+        (parameter1, parameter2) -> {code block}
+
+
+
+Collectors: it is a final class which extends object class.
+           > belongs to stream package.
+
+Stream: used to process collection of objects, it contains classes for processing sequence of elements.
+operatoins-
+	> distinct()- creates a new stream of unique elements of previous stream
+	> count()- returns stream's size
+	> toMap()- returns a collector which produces new map instance
+	> groupingBy()- groups objects by some property and stores results in map instance
+	> flatMap()- a stream contains its own sequence elements and to create a stream for inner elements we use flatMap.
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,182 @@
+Javascript:
+-----------
+Standard javascript is based on ecmascript
+V8- javascript engine by google
+alt+shift+f= format
+object literals=> key and value pairs in objects
+constant variables- All Capitals or declare const before variable (Only premitive datatypes will be immutable if we declare them as constants)
+Datatypes- Num(decimals), String, Bool, Undefined(just var declaration without assigning value, Null, Symbol, BigInt
+Comments- single line//  /* */ multi line   (Ctrl+/)
+typeof variable/value- gives datatype
+mutation- changing value of variable
+"**" is used for power(^)
+template literals: `I'm ${name} and I'm ${age} years old` (""" """ in java);
+NaN: not a number
+Number(String): type conversion to number
+String(Number): type conversion to String
+type coercion
+===(strictly equal both value and datatype) vs ==(type conversion)
+prompt("enter input through console")
+Strict mode: 'use strict'; [declare it at beginning line to avoid silly mistakes]
+
+Function syntax: function fun(){statements;}
+calling: fun(); or fun.call(); or fun.apply(); [call vs apply]
+arrow functions (nothing but lambda expressions)
+function vs function expression
+Arrays:
+const arrayName= ["abc", "123", "xyz"];
+const arrayName2= new Array(1991, 1992, 1993);
+arrayName.unshift("value"): adding value at starting index by pushing other values further
+arrayName.shift(): deleting first element
+indexof vs includes (has in set)
+
+calling a value from object:
+
+type 1: objectName.valueName;
+type 2:
+const var= prompt("enter the desired value name to get from object");
+objectName[var];
+
+CSS:
+a{
+body{
+h1{
+.first{ => class
+#second{ => id
+*{ => all
+input, button{
+#second h2{ => h2 tag in second id
+
+padding- inner space btw object and margin
+margin- outer space between ends and margin line
+box-sizing: border-box;
+display: block(visible)/none(hidden);
+-------------------------------------------------
+
+document.querySelectorAll('className') : selects all with that classname
+document.querySelector('.message').textContent;
+gets text from .message class
+.value: getting input value
+.addEventListener('click', function(){ console.log(document.querySelector('.class').value);});
+configuring submit button with input values and printing on console(function=eventHandler)
+
+keyboard keys eventlisteners: keydown(as soon as we press), keypress(keep on pressing), keyup(as soon as we lift finger)
+DOM- Document Object Model- web api
+
+element.classList.toggle(".addingClass");(adds if it's not there and removes if it's there)
+
+scopes: Global scope, Function scope and Block(only let and const) scope
+
+This keyword:
+global== window
+inside function expression== undefined(if using strict mode) or window(if using sloppy mode)
+indise arrow function== this keyword of the parent scope
+
+Arguments keyword exists in normal functions and in function expressions..... not in arrow functions
+object.assign({},objectThatYouNeedToCopy);
+shallow copy vs deep clone
+array destructuring: const arr= [2, 3, 4];		const[x, y, z]=arr;	or	const[x, , z]=arr;
+swapping=> [x, z]= [z, x];
+nested destructuring for nested arrays- similar to destructuring
+destructuring objects const{exactName1: newName1, exactName2: newName2}=obj;
+can declare default values for destructuring if object variables or array elements are not defined
+spread operator: ...		const arr=[1, 2, 3]	const newArr=[0, 4, ...arr];
+iterables: all builtin data structures are iterables except objects
+rest patterns: exact opposite to spread operator but both have same syntax	const[a, b, ...others]= [1, 2, 3, 4, 5];
+Short circuiting: || and && (works exactly opposite)
+
+Nullish coalescing Operator(??)- null values will short circuit the evaluation
+
+Arrays, Sets, Objects, Maps: built-in data structures
+
+for(const varName of arrayName) console.log(varName) ==> for-of loop (similar to for each)
+for(const varName of arrayName.entries()) console.log(varName) // array details with index
+
+Optional chaining: "?"
+	restaurant.menu?.[1] ?? "doesnot exist";
+
+Map: const mapVar= new Map();
+mapVar.set([["question", "enter question here"], [1, "option1"], [2, "option2"], [3, "option3"], [true, "correct answer"], [false, "wrong answer"], ["correct", 3]]);
+mapVar.get("question");
+mapVar.entries();
+mapVar.keys();
+mapVar.values();
+
+not built-in data structures in JS:
+Stacks, Queues, LinkedLists, Trees, HashTables
+
+for(const [min, event] of gameEvents){
+    const half= min<=45? "FIRST" : "SECOND";
+    console.log(`[${half} HALF] ${min}: ${event}`);
+}
+
+const properName= ["Mr.", firstName, middleName, lastName.toUpperCase()].join(" ");
+
+const template= "this is a sample template which should contain first letter capital in all words";
+templateSplit= template.split(" ");
+for (const n of templateSplit){
+    newtemplate.push(n[0].toUpperCase() + n.slice(1));
+    ||
+    newtemplate.replace(n[0], n[0].toUpperCase());
+}
+console.log(newtemplate.join(" "));
+
+*One of the operands of a concatination method is a string, then result would be a string*
+
+cli:
+cd..
+dir
+mkdir
+D:
+C:
+
+**NODEJS**
+
+Module: reusable block of code (encapsulated and doesn't  effect other modules)
+things declared under module.exports will only be visible to modules that are using current module
+//
+fs= fileserver(filesystem)
+fs.readFileSync(): synchronous process (works after buffer collects all the data)
+fs.readFile(fileName, function(err, data){ // asynchronous
+        if(err){
+            res.writeHead(404, {'Content-Type': 'text/html'})
+            return res.end("404 not found");
+        }
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write(data);
+        return res.end();
+    })
+here inside readFile()[which is a property of module fileserver] args, fileName is type and function(err, data) is a listener
+//
+npm init -y => for creating package.json file in our project
+npm install -d nodemon => node monitor for restarting our app automatically (-d means it'll be present only at development)
+npm install express-handlebars => our webpages becomes more than a static html (an engine that works with dynamic content)
+views are webpages,  layouts are templates
+Events are two types: system events, custom events
+can create objects using another objects: var obj2= Object.create(obj1);
+util.onherits(fun1, fun2); [copying function2 properties to function1]
+Asynchronous: More than one process running simultaniously
+Synchronous: One process executing at a time
+NodeJs is asynchronous
+V8 and Javascript are synchronous
+buffer: Limited storage which gathers data and move
+Stream: buffer collects data using streams. Sequence of data made available over time
+chunk: piece of data sent through stream
+Character set: representing characters as numbers( Unicode/ ASCII )
+Character encoding: converting characterset into binary(UTF-8(8 bit format), base64)
+
+
+
+
+KT sessions
+Sonar code smells
+Javascript course
+Node course 1
+Node course 2
+BFS0
+
+
+
+
+
+select * from v$versions;

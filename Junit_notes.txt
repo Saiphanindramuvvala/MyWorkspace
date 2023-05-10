@@ -1,0 +1,33 @@
+Junit:
+We will test only public methods of a class
+all test methods should be void
+@Test
+@Before
+@BeforeEach
+@BeforeAll
+@After
+@AfterEach
+@AfterAll
+@BeforeClass
+assertEquals(): checks values of 2 objects
+assertSame(): checks references of 2 objects
+@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(MockitoJunitRunner.class)
+to run as junit in maven project:
+	Junit platform runner
+	Junit jupiter api
+Mocking involves 3 important steps:
+	Stubbing
+	Setting expectations
+	Verifying
+
+@Mock
+@InjectMocks
+
+
+
+
+
+
+
+
