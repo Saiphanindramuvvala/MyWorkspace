@@ -1,0 +1,67 @@
+Ctrl+shift+g- search for references of a specific method/var in the workspace
+Alt+up/down- moving line to up/down
+Ctrl+del- deleting whole line
+Ctrl+Shift+f- formatting file
+code . in folder- to open it in vscode
+Ctrl+h- file search (to search words in repo)
+Ctrl+r- search a class accross workspace
+Fn+Alt+F5- update project
+
+Git Commands:
+------------
+
+//if not verified
+git --global -c http.sslVerify=false
+
+//Syncing local with bitbucket(method-1)
+git fetch
+git pull origin master --rebase
+
+//syncing local with bitbucket(method-2)
+git fetch
+git rebase origin/master
+git push -f origin branchName
+
+//stopping rebase
+git rebase --abort
+
+//resetting local changes completely
+git reset --hard origin/master
+
+//If changes were made in local but forgot to sync with origin master
+git pull origin master --rebase --autostash
+
+//git login
+git config --global user.name "SaiPhanindra"
+git config --global user.password "enter here"
+
+//Raising a PR(pushing changes to bitbucket)
+git status
+git add src
+or
+git add FilePath FilePath
+git commit -m "message"
+git push origin branchName
+
+//Updating existing PR with new changes
+git status git add src
+or git add FilePath FilePath
+git commit --amend
+click esc and :wq and enter
+git push -f
+
+//switching between branches
+git checkout branchName
+
+//To get defect from other branch to current branch
+git fetch
+git pull
+git checkout <new branch>
+git cherry-pick -n <defectId>
+git status
+git commit -m "message"
+git push -f
+
+//remove a file from commit
+git reset
+git checkout origin/master -- <path of the file that you want to remove>
