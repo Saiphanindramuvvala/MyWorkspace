@@ -9,7 +9,7 @@ instance- declared inside class but outside body of method.
 static- variable is declared as static.
 
 static: static is stateless.
-
+	//Static imports should be imported manually
        > when used static it always stores data in method area.
        > non-access modifier used for methods and attributes.
        > static methods/attributes can be accessed without creating an object of a class.
