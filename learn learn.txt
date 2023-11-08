@@ -1,0 +1,187 @@
+Arraylist vs Linkedlist - Accessing by index fast in ArrayList, removing by index fast in LinkedList
+Why map is not considered as a collection - because map has a key and a value. Map doesnot give you either only a set of keys or a set of values to implement collections. Map is a combination of three collections - keys, values, key-value pairs
+HashMap vs TreeMap vs HashTable
+Custom actuators and types of metrics that can be monitored through actuator
+Global exceptional handling - Springboot concept
+@RestControllerAdvice
+@ExceptionHandler in method level
+groupBy
+ORM associations - onetomany, manytoone, onetoone and so on
+Datasource -> Session(gets db username password from app properties to establish connection) -> hibernate transaction manager -> queries(traditional way of communicating with database)
+Spring with hibernate used to have a plain pojo without any annotations. associations, mappings, validations, table details and all are declared in hibernate mapping configuration file which is .hbm.xml, later replaced with ORM annotations in entity class we are using currently
+try with resource - java 8 feature
+groubBy(country wise), having(conditions where aggregates included), where (conditions...)
+normalization in dbms
+hibernate implementation of a query (session, transaction, etc)
+@Transactional
+rollback
+cascade (only read write) - (PERSIST, REMOVE, REFRESH, MERGE, DETACH)
+on delete cascade(on foreign keys of parent table)
+rest template - also known as apigee here
+setup, operate, scalingup the kafka topics - Zookeeper
+resource server(generates token), authorization server( for authentication and authorization)
+authentication - verifying login creds are correct or not with database
+authorization - verifying that the loggedin user has previlages or authorized to access the particular resource
+role based authentication and authorization
+Eureka discovery server - api gateway - routing, filtering, oauth
+spring cloud - sleuth, zipkin, spanId, traceId
+spring-cloud-zipkin-sleuth
+logging mechanism - elk stack, kibana, logstash, keyvalue pair  nosql
+redis cashe - cacheput, cacheevict, cacheable, enablecaching
+java mail sender
+hor many ways can we get value from application properties
+Mockito.verify
+AssertThat
+AssertTrue
+@JsonInclude
+@JsonValue vs @Column
+ObjectMapper readValue, writeValueAsString	reading value from json or writing value in json from an object
+ArgumentMatchers.any(classname)
+String.valueOf(Obj) better than Obj.toString()
+"Check Me".equals(StringObj) better way to compare
+jsonproperty vs jsonvalue vs jsonignore
+head revision vs previous revision
+String builder
+String buffer
+String loader
+String pool
+Static methods and variables will get excluded from model class validations
+prometheus - dependency added to monitor extra metrics along with actuator such as request rate, average response time, error count
+@column(name="xyz", insertable=false, updatable-false)
+harbor, rancher, docker
+zulu vs jdk
+base64 is a way to encode binary data, while utf8 and utf16 are ways to encode unicode text
+list.removeIf(Predicate<>)
+List.subList(int, int)
+flyway db migration springboot
+refresh scope
+bootstrapping
+sandbox
+@Configuration
+@ConfigurationProperties
+@EnableConfigurationProperties
+@ConfigurationPropertyScan
+@EnableAutoConfiguration
+@Primary
+@Qualifier
+hit run -> scans yml or property file and load all properties -> creates application context -> creates all required beans -> kickstart tomcat server -> application up and running
+how to add custom server in springboot
+fault tolerance
+load balancing
+circuit breaking
+asynchronous messenging system
+log monitoring
+api gateway
+spring security
+spring cloud architecture
+
+ORM
+@Transactional(isolation = Isolation.READ_UNCOMMITTED)
+@Modifying(clearAutomatically = true, flushAutomatically = true)
+@Transactional(propogation = Propogation.REQUIRES_NEW)
+@OneToMany(mappedBy = "accountDetails", cascade = CascadeType.ALL, orphanRemoval = true)
+@JoinColumn(name = "Account_Id", nullable = false)
+JoinColumn(name = "Account_Association_Activity_Cd", referencedColumnName = "Account_Association_Activity_Entity_Id")
+Joincolumn for table joins... annotation wilkl be given for the common attribute of both tables(foreign key)
+name = column name of row in db in current table
+reference column name = column name of db i child table
+nullable = false is same as validation of nonnull annotation
+persist: when we save person entity, address entity will also get saved
+merge ; update person entity, address entity will also get updated
+remove: remove person entity, address entity will also be removed
+refresh: to refresh data in the object. perhaps there was a change on database which needs to be synced. (Sync from database)
+detach: .....?
+all: performs all
+orphanRemoval: whether to apply remove operation to entities that have been removed from the relationship and to cascade the remove operation to those entities.
+propogation.REQUIRES_NEW: new transaction will be started in a parallel thread with an existing transaction
+propogation.REQUIRED: existing transaction will be reused for this method also. if no existing transaction then new transaction thread will be started
+clear automatically and flush automatically - used to clear all the cache data after the transaction is completed before closing session.
+An sql query will be committed and changes will be reflected only after whole transaction is successful. otherwise transaction will be rolled back and aborted
+cascadetype all - sued to retrieve all the data from the child table instead of retriving only the primary key of it when we hit the parent entity
+fetchtype lazy loading - when you create object of parent entity, child entity is not involved in it. you can access child entity of that object by using its particular getter.
+eager loading - when you create object of parent entity . child entity will also be populated at the same time
+amazon product categories is example for lazy loading
+spring batch processing - ETL: Extract Transfer Load
+Java File IO - writing data into a file and reading data from a file - FileWriter, FileReader, BufferReader
+dispatch servlet
+design patterns
+AOP(Aspect Oriented Programming)
+Spring.config.import
+@profile(name = "abc, "def") - used at class level to denote that the specific property files should be used in that class
+bean dependency ambiguity resolution by @qualifier("abc") or @resource(name="abc")
+synchronized blocks - (synchronized is a keyword declared before methods to make it thread safety) if a method is been accessed by multiple users at a time data will get currepted. to avoid that we use this.
+static block vs constructor vs non static block. which executes first when we run application
+Collections.isEmpty(obj)
+Objects.nonNull(obj)
+duplicating table - create table new_table as (select * from old_table) or we can use one query to copy rows(create table new_table like old_table) and another query to copy data(insert into new_table (select * from old_table)
+while vs foreach vs dowhile vs for
+thread safety
+multi threading vs seaquential programming
+balanced tree
+concurrent hashmap vs treemap vs linked hashmap vs hashmap
+concurrency vs multi threading vs sequential programming
+thread pooling
+dev properties vs vm arguments
+ivy project vs springboot project
+fail fast vs fail safe
+CopyOnWriteArrayList and CopyOnWriteHashmap vs normal arraylist and hashmap
+liskov substitution principle
+how to implement an interface partially( can implement all methods of interface by implementing it to an abstract class and extend abstract class to use methods we need in child classes) but extending is bad practice in java and should be avoided. so declare seperate interfaces according to the need
+SOLID principles in java:
+S - Single Responsibility
+O - Open for extension, closed for modification
+L - Liskov substitution - don't put all methods in single interface, go for segregation
+I - Interface segregation
+D - Dependency Injection
+Interface segregatio example:
+	carControls
+	  -start()
+	  -stop()
+	  -breakSystem()
+
+	carEngineRelated
+	  -engine()
+	  -accelerate()
+
+	HeroHonda implements CarControls
+	  start, stop, breaksystem
+	BMW implements carEngineRelated
+	  engine, accelerate
+	Bajaj implements CarControls, CarEngineRelated
+	start, stop, breaksystem, engine, accelerate
+set vs list - insertion order is not preserved because no index or pointers.... insertion order is preserved, unique....allows duplicates
+completable vs multithreading
+how many ways to use multithreading
+IOC container and its types - applicationcontext, beanfactory
+role based security vs url based security
+comparable and comparator in streams
+sorting employee objects by employee id using comparator and comparable
+natural sorting order - ascending order and alphabetical order
+randomList.stream().collect(Collectors.groupingBy(GroupingElement1, Collectors.groupingBy(GroupingElement2, Collectors.groupingBy(GroupingElement3)))); [Example: countries, states, districts]
+BLOB(Binary Large Objects) vs CLOB(Character Large Objects)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
