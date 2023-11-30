@@ -159,6 +159,79 @@ sorting employee objects by employee id using comparator and comparable
 natural sorting order - ascending order and alphabetical order
 randomList.stream().collect(Collectors.groupingBy(GroupingElement1, Collectors.groupingBy(GroupingElement2, Collectors.groupingBy(GroupingElement3)))); [Example: countries, states, districts]
 BLOB(Binary Large Objects) vs CLOB(Character Large Objects)
+Angular 17, Java 21
+map: entrySet()[returns collection view of a map], keySet(), values()
+Map.Entry class -- Map.Entry.getKey(), Map.Entry.getValue()
+
+Every application has primary logic(business logic), secondary logic(error handling, logs, health and metrics,...)
+AOP and observability are Secondary logic category
+AOP:
+for auditing, logging, performance
+@Aspect- at class level to write all AOP logic
+Advices- Around, before, after returning
+pointcut- which method or class or package this AOP is 
+joinpoint.proceed() executes the methods
+
+springboot observability:
+replacement for spring AOP and available from springboot 3.0
+Can be clubbed with actuator metrics
+Can see how many times the method was hit, time taken, max time, errors occured, logs and many more
+
+Application properties:
+application-dev, application-kafka, application-test is the syntax if we want to use it directly with @Profile("dev")
+if we give @Profile at class level that means when a particular property file is in action this class will be loaded
+@configurationproperties(prefix="a") if our application properties has configurations with two prefixes a and b and we just want configuration with a
+
+any property declared externally or not in the above syntax:
+@PropertySource(fully qualified path of the property file) instead of @Profile
+
+RabbitMQ
+Queue messenging system
+Publishers -> Exchange -> Binders -> Queue -> Consumers
+Publisher will send message and BinderKey to Exchange and according to the binderKey it will go to that particular queue
+where as in kafka Zookeeper will decide which partition in which topic that message should go
+Exchange will send the message to that particular Binder which sends to its corresponding Queue
+In RabbitMq configuration we will define routing with ExchangeKey, BinderKey and QueueName which will be having a RoutingKey which we will define in application properties
+for posting message to one queue we will have one routing bean which should have one routing Key which will be used by Publisher/Producer to send message
+producer/Publisher will send message using that routingKey which we can get from application properties
+listener/Consumer will get the message from Queue by subscribing it with QueueName
+The message will be stored in Queue unless it will be consumed by all subscribers. so RabbitMQ will not have retry mechanism
+where as kafka topic can have message only for a particular time . so it will be having retry mechanism
+
+Docker image will be stored in multiple pods in containers in kubernetes so that the api gateway will retry the request for the pod which is free ?
+offsetcontroller
+atomic reference
+immutable vs mutable with examples
+
+for vs foreach:
+for(initialization; condition; increment/decrement)
+foreach(type variable : object to iterate)
+foreach will be used for collections whereas for can be used for any datatype
+foreach is enhanced for loop and introduced in jdk5
+when the condition is unknown we go with foreach
+
+OAUTH architecture:
+Springboot-Starter-OAuth-Client is the dependency
+User -> OAuth client -> Authentication server(Authentication+Authorization) -> Resource server -> Authentication server again for verification
+User should pass: Username, Password, ClientId, SecretId, GrantType
+OAuth client will redirect these info to authentication server when you hit the token endpoint
+Authentication server verifies clientId and secretId which are constants. then verifies Username, password from DB. checks the authorization for the requested resource and generates token
+then the token reaches resource server which haves the role and request url.
+resource server reverify token with authentication server and gives access to the requested resource/api
+key cloak is a software which is available recently and we can use it to replace authentication server and oauth client and even database if we are interested to use
+SSO- single sign on
+Google Cloud PLatform ->more products-> APIs and services-> credentials-> go to console and create a new client, copy clientId and secretId to configure it in our web application OAuth and use google for authentication
+
+Queryparam vs pathvariable
+variable declaration, positional parameters
+mostly used for db hits in dao layer, used for business logic purpose in service layer
+can give in any order, order should be preserved
+
+Restful vs soap
+http, ...
+stateless, has state
+don't need to wait for response after state established, will wait for response after state established
+Json, XML
 
 
 
