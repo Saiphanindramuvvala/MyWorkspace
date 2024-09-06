@@ -6,6 +6,32 @@ code . in folder- to open it in vscode
 Ctrl+h- file search (to search words in repo)
 Ctrl+r- search a class accross workspace
 Fn+Alt+F5- update project
+ctrl t : rebase in intellij
+ctrl g: get line number in intellij
+ctrl L: get line number in eclipse
+ctrl L: delete line in n++
+ctrl d : delete current line in eclipse
+win shift s: screenshot in windows
+ctrl shift i: evaluate expression while debugging in eclipse 
+f6 in eclipse and f8 in intellij for nextline while debugging
+alt+left or backspace to go back in browser
+ctrl n: search class in intellij
+ctrl shift n: search file in intellij
+ctrl alt o in intellij , ctrl shift o in eclipse to organize imports
+pulling latest code in intellij: checkout to master and ctrl t then click on branch and rebase on to master
+intellij:file project structure sdks java version
+intellij: maven click tool button open maven settings set maven file
+ctrl alt L: formatting lines in intellij
+ctrl alt L: format lines in intellij
+alt shift enter: auto import in intellij
+shift f4: see table details in oracle SQL 
+ctrl k: get name in outlook
+ctrl k: find next occurance in eclipse
+shift alt j: generate javadocs in eclipse
+fn f3: find next occurance in intellij
+ctrl o: search method in eclipse
+
+mcn clean package -U to force clean update with snapshots
 
 Git Commands:
 ------------
