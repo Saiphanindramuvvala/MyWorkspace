@@ -91,3 +91,66 @@ git push -f
 //remove a file from commit
 git reset
 git checkout origin/master -- <path of the file that you want to remove>
+
+//commit related log
+git log
+q to come out
+
+//changes made in local but latest code not pushed
+git pull origin maater --rebase --autostash
+
+//squash 2 commits
+do 2nd commit 
+git rebase -i head~2
+click i ans add s at 2nd commit to squash
+then esc :wq
+then again click i and comment 2nd commit message (#)
+then esc :wq
+git push -f
+
+//commit --amend showing no upstream branch exists
+git commit --amend
+esc :wq
+git push --force-with-lease origin branchname
+
+//reverting commit 
+git log
+select commit id
+gut revert <commitid>
+
+//switch branch 
+git checkout branchname
+
+//cherrypick
+git remote add other addrepoclonelinkhttp
+git fetch other
+git cherry-pick commitid
+git remote remove other
+
+//resolve conflicts 
+git rebase origin/master
+resolve
+git rebase --continue
+esc:wq
+git push -f
+
+//rename commit
+git commit --amend -m "new name"
+
+//get latest changes from common branch common pr
+git pull origin branchname --rebase
+
+//reset branch until particular commit id
+git reset --hard <commitid>
+
+//remove a commit from working branch 
+git reset --soft head~1
+
+//delete local changes
+git clean -nfd
+-n tells which files are getting removed
+git clean -fd
+-f is for force -d is to remove untracked directories
+
+
+
