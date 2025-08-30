@@ -670,6 +670,9 @@ kibana:
 container.image.name" " and message* *
 
 
+caching pagination and indexing (for almost all performance related questions)
+
+
 
 
 
